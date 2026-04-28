@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(rm -rf venv)",
+      "Bash(python -m venv venv)",
+      "Bash(./venv/Scripts/python -m pip install -r requirements.txt)",
+      "Bash(./venv/Scripts/python -c \"from app.main import app; print\\('Import OK'\\)\")",
+      "Bash(./venv/Scripts/python -m uvicorn app.main:app --host 0.0.0.0 --port 8000)",
+      "Bash(claude mcp *)",
+      "Bash(python -m uvicorn app.main:app --reload --port 8000)",
+      "Bash(pip install *)",
+      "Bash(curl -s http://localhost:8000/docs)",
+      "Bash(python -c ' *)",
+      "Bash(curl *)",
+      "Bash(pkill -f \"uvicorn\")",
+      "Bash(python -m uvicorn app.main:app --host 127.0.0.1 --port 8000)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //F //PID 7100)",
+      "Bash(taskkill //F //PID 14268)",
+      "Bash(taskkill //F //PID 7540)",
+      "Bash(taskkill //F //PID 14088)",
+      "Bash(taskkill //F //PID 3860)",
+      "Bash(python -m uvicorn app.main:app --host 127.0.0.1 --port 8001)",
+      "Bash(python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --no-reload)",
+      "Bash(pkill -9 -f \"python.*uvicorn\")",
+      "Bash(pkill -9 -f \"uvicorn\")",
+      "Bash(taskkill //F //PID 13676)"
+    ]
+  }
+}

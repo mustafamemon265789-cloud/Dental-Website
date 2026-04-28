@@ -1,0 +1,19 @@
+.appointments-page {
+  /* Container styles handled by main-content */
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.filter-group .form-select {
+  width: auto;
+  min-width: 150px;
+}

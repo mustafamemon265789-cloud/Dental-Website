@@ -1,0 +1,131 @@
+.messages-page {
+  /* Container styles handled by main-content */
+}
+
+.messages-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .messages-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.message-list {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.message-item {
+  padding: 1rem;
+  border-bottom: 1px solid var(--gray-200);
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.message-item:hover {
+  background: var(--gray-50);
+}
+
+.message-item.selected {
+  background: var(--primary-color);
+  color: white;
+}
+
+.message-item.unread {
+  background: var(--gray-50);
+  font-weight: 500;
+}
+
+.message-item.selected.unread {
+  background: var(--primary-color);
+  color: white;
+  font-weight: 500;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.message-name {
+  font-weight: 600;
+}
+
+.message-date {
+  font-size: 0.8rem;
+  color: var(--gray-400);
+}
+
+.message-item.selected .message-date {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.message-email {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  margin-bottom: 0.25rem;
+}
+
+.message-item.selected .message-email {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.message-preview {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.unread-dot {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 8px;
+  height: 8px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+.message-item.selected .unread-dot {
+  background: white;
+}
+
+.message-full {
+  padding: 1rem;
+}
+
+.detail-row {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.detail-row strong {
+  color: var(--gray-600);
+  margin-right: 0.5rem;
+}
+
+.detail-message {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.detail-message p {
+  margin-top: 0.5rem;
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 0.5rem;
+}
