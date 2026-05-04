@@ -71,7 +71,7 @@ export default function Login({ onLogin }) {
         <div className="login-help">
           <p>Don't have an API key?</p>
           <p className="help-text">
-            Create one by running: <code>POST /api/auth/create</code>
+            Run: <code>cd backend && python generate_api_key.py</code>
           </p>
         </div>
       </div>

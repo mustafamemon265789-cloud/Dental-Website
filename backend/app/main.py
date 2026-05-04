@@ -7,9 +7,17 @@ from sqlalchemy import text
 app = FastAPI(title="BrightSmile Dental API", version="1.0.0")
 
 # CORS configuration
+import os
+FRONTEND_URL = os.getenv("FRONTEND_URL", "*")
+allow_origins = [FRONTEND_URL] if FRONTEND_URL != "*" else ["*"]
+if FRONTEND_URL == "*":
+    allow_origins = ["*"]
+else:
+    allow_origins = [FRONTEND_URL, "http://localhost:5173", "http://localhost:5174"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:5174", "http://localhost:3000", "*"],
+    allow_origins=allow_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

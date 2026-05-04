@@ -4,7 +4,7 @@ from typing import Optional
 
 class Settings(BaseSettings):
     # Database
-    DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/dental_website"
+    DATABASE_URL: str = "sqlite+aiosqlite:///./dental.db"
 
     # API Key
     SECRET_KEY: str = "your-secret-key-change-in-production"
@@ -18,6 +18,13 @@ class Settings(BaseSettings):
 
     # Environment
     ENVIRONMENT: str = "development"
+
+    # Google OAuth (optional - loaded from os.getenv in auth.py)
+    GOOGLE_CLIENT_ID: Optional[str] = None
+    GOOGLE_CLIENT_SECRET: Optional[str] = None
+    GOOGLE_REDIRECT_URI: Optional[str] = None
+    ALLOWED_ADMIN_EMAILS: Optional[str] = None
+    FRONTEND_URL: Optional[str] = None
 
     class Config:
         env_file = ".env"
